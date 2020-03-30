@@ -333,6 +333,54 @@
 typedef struct Vector2 {
     float x;
     float y;
+	Vector2 operator +(Vector2 rhs)
+	{
+		Vector2 newVec;
+		newVec.x = x +rhs.x;
+		newVec.y = y + rhs.y;
+		return newVec;
+	}
+	Vector2 operator -(Vector2 rhs)
+	{
+		Vector2 newVec = { 0,0 };
+		newVec.x = x - rhs.x;
+		newVec.y = y - rhs.y;
+		return newVec;
+	}
+	void operator +=(Vector2 rhs)
+	{
+		x += rhs.x;
+		y += rhs.y;
+	}
+	bool operator ==(Vector2 rhs)
+	{
+		return x == rhs.x && y == rhs.y;
+	}
+	Vector2 operator *(float rhs)
+	{
+		Vector2 newVec = { 0,0 };
+		newVec.x = x * rhs;
+		newVec.y = y *rhs;
+		return newVec;
+	}
+	float Magnitude()
+	{
+		return sqrt((x*x) + (y*y));
+	}
+	Vector2 Normalize()
+	{
+		Vector2 newVec = { 0,0 };
+		if (x < 1 && x>-1 && y < 1 && y>-1)
+		{
+			newVec.x = x;
+			newVec.y = y;
+			return newVec;
+		}
+		newVec.x = x / Magnitude();
+		newVec.y = y / Magnitude();
+		return newVec;
+	}
+
 } Vector2;
 
 // Vector3 type

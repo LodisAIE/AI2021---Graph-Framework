@@ -3,5 +3,7 @@
 class Behaviour
 {
 public:
-	virtual void Update(Agent agent);
+	Behaviour();
+	virtual ~Behaviour();
+	virtual void update(Agent* agent, float deltaTime) {};
 };
