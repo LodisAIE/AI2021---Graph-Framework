@@ -328,7 +328,7 @@
         typedef enum { false, true } bool;
     #endif
 #endif
-
+#include <cmath>
 // Vector2 type
 typedef struct Vector2 {
     float x;

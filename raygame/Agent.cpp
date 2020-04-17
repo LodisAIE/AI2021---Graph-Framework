@@ -22,7 +22,6 @@ void Agent::AddForce(Vector2 force)
 
 void Agent::Update(float deltaTime)
 {
-	Vector2 Force;
 	m_BehaviourList.size();
 	for (std::vector<SteeringBehaviour*>::iterator iter = m_BehaviourList.begin(); iter != m_BehaviourList.end(); ++iter)
 	{
@@ -37,7 +36,7 @@ void Agent::Update(float deltaTime)
 
 void Agent::Draw(Color color)
 {
-	DrawRectangle(position.x, position.y, 10, 10, color);
+	DrawRectangle(position.x, position.y, 10.f, 10.f, color);
 }
 
 void Agent::SetPosition(Vector2 newPos)
